@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Swift Programming Guide: Skills Required to Become an iOS Developer</title>
+<meta name="description" content="Swift coding and ios application development made simple: skills, tools, Windows options, Flutter and React Native paths, plus guides to read next.">
+<meta name="keywords" content="ios application development, swift coding, how to learn swift coding, learn swift quickly, ios app development on windows, flutter app development, react native for ios">
+<meta property="og:title" content="Swift Programming Guide: Skills Required to Become an iOS Developer">
+<meta property="og:description" content="Swift, SwiftUI, Xcode, Windows options, Flutter and React Native in plain words.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#FF2E93;--deep:#E0067A;--blush:#FFE9F3;--mist:#FFF6FA;--ink:#3A1027;--white:#fff;--line:#F6CFE2;--pt:env(safe-area-inset-top,0px);--pb:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:'Nunito Sans',system-ui,sans-serif;background:var(--white);color:var(--ink);line-height:1.7;font-size:17px;overflow-x:hidden}
+h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.12;letter-spacing:-.025em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:92px 0}
+
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:var(--pt)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.2rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ff8cc4,var(--pink) 60%,var(--deep))}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{text-decoration:none;font-weight:600;font-size:.95rem;color:#6b3a52}
+nav a:hover{color:var(--pink)}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:999px;background:var(--pink);color:#fff;box-shadow:0 12px 28px -8px rgba(255,46,147,.65);transition:transform .2s,background .2s}
+.btn:hover{background:var(--deep);transform:translateY(-3px)}
+.btn.ghost{background:#fff;color:var(--pink);box-shadow:inset 0 0 0 2px var(--pink)}
+.btn.ghost:hover{background:var(--blush)}
+.btn.sm{padding:10px 20px;font-size:.92rem}
+
+.hero{padding:76px 0 0;text-align:center;background:radial-gradient(ellipse 60% 50% at 50% 78%,var(--blush),transparent 70%)}
+.hero h1{font-size:clamp(2.6rem,6.6vw,5.4rem);font-weight:800;max-width:12em;margin:0 auto}
+.hero h1 em{font-style:normal;color:var(--pink)}
+.hero p{max-width:36em;margin:24px auto 32px;font-size:1.15rem;color:#6b3a52}
+.cta{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.stage{position:relative;height:620px;margin-top:40px;display:flex;justify-content:center;align-items:flex-end;overflow:hidden}
+
+.phone{position:relative;width:270px;height:560px;border-radius:48px 48px 0 0;background:var(--ink);padding:12px 12px 0;animation:float 6s ease-in-out infinite;box-shadow:0 40px 80px -20px rgba(255,46,147,.55);z-index:2}
+.phone::before{content:"";position:absolute;top:20px;left:50%;width:90px;height:26px;border-radius:20px;background:#000;transform:translateX(-50%);z-index:3}
+.screen{height:100%;border-radius:38px 38px 0 0;background:#fff;overflow:hidden;padding:60px 18px 0;text-align:left;display:flex;flex-direction:column;gap:12px}
+.screen h4{font-family:'Sora',sans-serif;font-size:1.3rem;line-height:1.15}
+.hero-card{background:linear-gradient(135deg,var(--pink),#ff7ab8);color:#fff;border-radius:22px;padding:16px;font-size:.85rem}
+.hero-card b{display:block;font-family:'Sora',sans-serif;font-size:1.5rem}
+.row{display:flex;align-items:center;gap:12px;background:var(--mist);border-radius:16px;padding:10px 12px;font-size:.82rem;font-weight:700}
+.row i{width:32px;height:32px;border-radius:10px;background:var(--blush);flex:none}
+.row small{display:block;font-weight:400;color:#7d5469}
+.code{background:var(--ink);color:#ffd3e8;border-radius:16px;padding:12px;font:500 .72rem/1.55 ui-monospace,Menlo,Consolas,monospace;white-space:pre}
+.code em{color:#ff8cc4;font-style:normal}
+.float{position:absolute;z-index:3;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:18px;padding:12px 18px;font-weight:700;font-size:.92rem;box-shadow:0 18px 40px -14px rgba(255,46,147,.5);animation:bob 5s ease-in-out infinite;text-align:left}
+.float small{display:block;font-weight:400;color:#7d5469;font-size:.78rem}
+.f1{left:max(2%,calc(50% - 440px));top:90px}
+.f2{right:max(2%,calc(50% - 450px));top:200px;animation-delay:-1.6s}
+.f3{left:max(4%,calc(50% - 400px));top:360px;animation-delay:-3s}
+.f4{right:max(4%,calc(50% - 380px));top:42px;animation-delay:-2.2s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-20px) rotate(2deg)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+.head{max-width:640px;margin-bottom:46px}
+.head h2{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:800;margin-bottom:14px}
+.head p{color:#6b3a52}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.tile{background:var(--mist);border:1px solid var(--line);border-radius:30px;padding:30px;grid-column:span 2;display:flex;flex-direction:column;gap:10px}
+.tile h3{font-size:1.35rem;font-weight:800}
+.tile p{color:#6b3a52}
+.tile.big{grid-column:span 4;background:linear-gradient(135deg,var(--pink),#ff6fb2);color:#fff;border:0;padding:38px}
+.tile.big h3{font-size:2rem}.tile.big p{color:#fff3f9;max-width:30em}
+.tile.wide{grid-column:span 3;background:var(--blush)}
+.tile.dark{background:var(--ink);border:0}
+.tile.dark h3{color:#fff}.tile.dark p{color:#f3c6dc}
+
+.windows{background:var(--mist);border-block:1px solid var(--line)}
+.windows .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.windows h2{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:800;margin-bottom:16px}
+.windows p+p{margin-top:14px}
+.plan{background:#fff;border-radius:30px;padding:34px;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(255,46,147,.45)}
+.plan h3{font-size:1.4rem;margin-bottom:10px;color:var(--deep)}
+
+.lanes{border-top:1px solid var(--line)}
+.lane{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:30px 12px;border-bottom:1px solid var(--line);text-decoration:none;transition:background .25s,padding .25s}
+.lane:hover{background:var(--blush);padding-left:28px;padding-right:28px}
+.lane h3{font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:800}
+.lane p{color:#6b3a52;margin-top:4px}
+.lane span{flex:none;font-weight:700;color:var(--pink);border:2px solid var(--pink);border-radius:999px;padding:8px 20px;white-space:nowrap}
+.lane:hover span{background:var(--pink);color:#fff}
+
+.reads{background:var(--blush)}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.read{display:block;text-decoration:none;background:#fff;border-radius:26px;padding:28px;border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
+.read:hover{transform:translateY(-5px);box-shadow:0 24px 44px -22px rgba(255,46,147,.6)}
+.read.feature{grid-column:1/-1;background:var(--pink);color:#fff;border:0}
+.read h3{font-size:1.25rem;font-weight:800;margin:8px 0 6px}
+.read.feature h3{font-size:1.7rem}
+.read p{color:#6b3a52}.read.feature p{color:#fff3f9}
+.tag{display:inline-block;font-weight:700;font-size:.85rem;padding:3px 14px;border-radius:999px;background:var(--blush);color:var(--deep)}
+.read.feature .tag{background:rgba(255,255,255,.22);color:#fff}
+
+.final{text-align:center}
+.final h2{font-size:clamp(2.1rem,5vw,3.6rem);font-weight:800;max-width:14em;margin:0 auto 18px}
+.final p{max-width:32em;margin:0 auto 30px;color:#6b3a52}
+
+footer{background:var(--pink);color:#fff;padding:60px 0 calc(34px + var(--pb))}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+footer h3{font-size:1.1rem;margin-bottom:12px}
+footer p{color:#ffe3f0}
+footer ul{list-style:none}
+footer li{margin-bottom:8px}
+footer a{text-decoration:none;border-bottom:2px solid transparent}
+footer a:hover{border-bottom-color:#fff}
+.copy{margin-top:38px;padding-top:20px;border-top:1px solid rgba(255,255,255,.35);font-size:.9rem;color:#ffe3f0}
+
+@media(max-width:960px){
+  nav ul{display:none}
+  .windows .wrap{grid-template-columns:1fr}
+  .tile,.tile.wide{grid-column:span 3}.tile.big{grid-column:span 6}
+  .f1,.f3{left:2%}.f2,.f4{right:2%}
+}
+@media(max-width:640px){
+  section{padding:64px 0}
+  .nav .btn{display:none}
+  .tile,.tile.wide,.tile.big{grid-column:span 6}
+  .rgrid,.foot{grid-template-columns:1fr}
+  .lane{flex-direction:column;align-items:flex-start}
+  .stage{height:560px}.phone{height:500px}
+  .f2,.f3{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><i></i>SwiftLane</a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#skills">Skills</a></li><li><a href="#windows">Windows</a></li><li><a href="#courses">Courses</a></li><li><a href="#reads">Guides</a></li>
+    </ul></nav>
+    <a class="btn sm" href="https://www.justacademy.co/course-detail/mumbai/ios-training-in-mumbai" target="_blank" rel="noopener">iOS course</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <h1>From first line of Swift to your own <em>iPhone app</em></h1>
+    <p>A calm, honest guide to ios application development. Learn which skills matter beyond swift coding, how to practice daily, and what to do if you only own a Windows laptop.</p>
+    <div class="cta">
+      <a class="btn" href="https://www.justacademy.co/blog-detail/swift-programming-guide-skills-required-to-become-an-ios-developer" target="_blank" rel="noopener">Read the full guide</a>
+      <a class="btn ghost" href="#skills">See the skills</a>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <div class="float f1">Build succeeded<small>Xcode simulator</small></div>
+      <div class="float f4">SwiftUI<small>Screens that follow your data</small></div>
+      <div class="float f2">Flutter or React Native<small>One codebase, two stores</small></div>
+      <div class="float f3">Git commit<small>Add habit tracker screen</small></div>
+      <div class="phone"><div class="screen">
+        <h4>Good morning, developer</h4>
+        <div class="hero-card"><b>12 day streak</b>Keep typing code daily</div>
+        <div class="code">struct Habit {
+  var name: String
+  var done = <em>false</em>
+}</div>
+        <div class="row"><i></i><div>Practice optionals<small>20 minutes</small></div></div>
+        <div class="row"><i></i><div>Build a tip calculator<small>Swift basic programs</small></div></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="head"><h2>The skills behind a working iOS developer</h2><p>Knowing the swift programming language is the start. Employers look at the whole toolkit.</p></div>
+    <div class="bento">
+      <article class="tile big"><h3>Swift fundamentals</h3><p>Optionals, structs, classes, protocols, closures and async code. Type your swift basic code by hand, read every compiler error calmly and spend real time here before chasing pretty screens.</p></article>
+      <article class="tile"><h3>SwiftUI and UIKit</h3><p>Start with SwiftUI and keep a working knowledge of UIKit for older apps.</p></article>
+      <article class="tile"><h3>Xcode, Git and debugging</h3><p>Simulator, breakpoints and clean commits that show your discipline.</p></article>
+      <article class="tile dark"><h3>Data and networking</h3><p>URLSession, Codable and local storage, with a plan for slow networks.</p></article>
+      <article class="tile wide"><h3>Architecture and testing</h3><p>MVVM keeps screens, logic and data apart, and a few unit tests make code easier to hand over.</p></article>
+      <article class="tile wide"><h3>Small finished projects</h3><p>A habit tracker that works beats a giant app you abandon. Always test on a real iPhone.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="windows" id="windows">
+  <div class="wrap">
+    <div>
+      <h2>On Windows? You can still begin today</h2>
+      <p>You can learn swift programming on Windows with the official toolchain and practice logic, algorithms and console programs without trouble.</p>
+      <p>Xcode and the iOS simulator run only on macOS, so most people use a cloud Mac, a secondhand Mac mini, or a cross platform framework that needs a Mac only for the final iOS build.</p>
+    </div>
+    <div class="plan"><h3>Your Windows game plan</h3><p>Write and practice swift on your laptop. Pick one route for iOS builds: a rented cloud Mac, a used Mac, or Flutter and React Native with occasional remote Mac access. Keep coding while you sort out hardware, because the habit matters more than the machine.</p></div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="wrap">
+    <div class="head"><h2>Choose your mobile lane</h2><p>Swift gives the deepest Apple access, Android has its own native route, and Flutter or React Native reach both platforms from one codebase.</p></div>
+    <div class="lanes">
+      <a class="lane" href="https://www.justacademy.co/course-detail/mumbai/ios-training-in-mumbai" target="_blank" rel="noopener"><div><h3>iOS training in Mumbai</h3><p>Swift, SwiftUI and Xcode through to a finished app.</p></div><span>View course</span></a>
+      <a class="lane" href="https://www.justacademy.co/course-detail/mumbai/android-app-development-in-mumbai" target="_blank" rel="noopener"><div><h3>Android app development in Mumbai</h3><p>Native apps for the most used phone platform.</p></div><span>View course</span></a>
+      <a class="lane" href="https://www.justacademy.co/course-detail/mumbai/flutter-training-in-mumbai" target="_blank" rel="noopener"><div><h3>Flutter training in Mumbai</h3><p>Dart, widgets and one codebase for two stores.</p></div><span>View course</span></a>
+      <a class="lane" href="https://www.justacademy.co/course-detail/mumbai/react-native-training-in-mumbai" target="_blank" rel="noopener"><div><h3>React Native training in Mumbai</h3><p>Use your web skills to build real native apps.</p></div><span>View course</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="reads" id="reads">
+  <div class="wrap">
+    <div class="head"><h2>Guides worth your next ten minutes</h2><p>Roadmaps, projects, skills and interview prep to keep you moving.</p></div>
+    <div class="rgrid">
+      <a class="read feature" href="https://www.justacademy.co/blog-detail/swift-programming-guide-skills-required-to-become-an-ios-developer" target="_blank" rel="noopener"><span class="tag">Start here</span><h3>Swift programming guide: skills required to become an iOS developer</h3><p>The full walkthrough behind this page.</p></a>
+      <a class="read" href="https://www.justacademy.co/blog-detail/ios-developer-roadmap-2026-learn-swift-xcode-app-development" target="_blank" rel="noopener"><span class="tag">Roadmap</span><h3>iOS developer roadmap 2026</h3><p>Swift, Xcode and app development in the right order.</p></a>
+      <a class="read" href="https://www.justacademy.co/blog-detail/10-flutter-projects-for-beginners-to-build-a-job-ready-portfolio" target="_blank" rel="noopener"><span class="tag">Projects</span><h3>10 Flutter projects for beginners</h3><p>Portfolio ideas that impress recruiters.</p></a>
+      <a class="read" href="https://www.justacademy.co/blog-detail/react-native-developer-skills-complete-guide-for-beginners" target="_blank" rel="noopener"><span class="tag">Skills</span><h3>React Native developer skills</h3><p>A complete beginner guide to what you need.</p></a>
+      <a class="read" href="https://www.justacademy.co/blog-detail/android-developer-interview-questions-for-freshers-and-experienced-developers" target="_blank" rel="noopener"><span class="tag">Interviews</span><h3>Android developer interview questions</h3><p>For freshers and experienced developers alike.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Your first app starts with one small function</h2>
+    <p>Open an editor tonight, write something tiny and break it on purpose. When you want feedback on your code, explore a guided path.</p>
+    <div class="cta">
+      <a class="btn" href="https://www.justacademy.co/course-detail/mumbai/ios-training-in-mumbai" target="_blank" rel="noopener">Explore iOS training</a>
+      <a class="btn ghost" href="https://www.justacademy.co/blog-detail/swift-programming-guide-skills-required-to-become-an-ios-developer" target="_blank" rel="noopener">Read the guide</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><h3>SwiftLane</h3><p>An educational landing page about swift coding, ios application development and the cross platform options around it.</p></div>
+      <div><h3>Courses</h3><ul>
+        <li><a href="https://www.justacademy.co/course-detail/mumbai/ios-training-in-mumbai" target="_blank" rel="noopener">iOS training</a></li>
+        <li><a href="https://www.justacademy.co/course-detail/mumbai/android-app-development-in-mumbai" target="_blank" rel="noopener">Android app development</a></li>
+        <li><a href="https://www.justacademy.co/course-detail/mumbai/flutter-training-in-mumbai" target="_blank" rel="noopener">Flutter training</a></li>
+        <li><a href="https://www.justacademy.co/course-detail/mumbai/react-native-training-in-mumbai" target="_blank" rel="noopener">React Native training</a></li></ul></div>
+      <div><h3>Guides</h3><ul>
+        <li><a href="https://www.justacademy.co/blog-detail/swift-programming-guide-skills-required-to-become-an-ios-developer" target="_blank" rel="noopener">Swift programming guide</a></li>
+        <li><a href="https://www.justacademy.co/blog-detail/ios-developer-roadmap-2026-learn-swift-xcode-app-development" target="_blank" rel="noopener">iOS developer roadmap</a></li>
+        <li><a href="https://www.justacademy.co/blog-detail/10-flutter-projects-for-beginners-to-build-a-job-ready-portfolio" target="_blank" rel="noopener">Flutter projects</a></li>
+        <li><a href="https://www.justacademy.co/blog-detail/react-native-developer-skills-complete-guide-for-beginners" target="_blank" rel="noopener">React Native skills</a></li>
+        <li><a href="https://www.justacademy.co/blog-detail/android-developer-interview-questions-for-freshers-and-experienced-developers" target="_blank" rel="noopener">Android interview questions</a></li></ul></div>
+    </div>
+    <p class="copy">Made for learners starting their iOS journey. Swift and iPhone are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+</body>
+</html>
